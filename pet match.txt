@@ -1,0 +1,102 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "pet match",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PetMatchIntent",
+                    "slots": [
+                        {
+                            "name": "size",
+                            "type": "sizeType",
+                            "samples": [
+                                "no",
+                                "yes"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "I want a {size} puppy",
+                        "recommed a dog",
+                        "I want a large dog"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "sizeType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "large"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "medium"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "small"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "PetMatchIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "size",
+                            "type": "sizeType",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.259020741638.1360496350523",
+                                "elicitation": "Elicit.Slot.259020741638.1360496350523"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.259020741638.1360496350523",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "are you okay with any color?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.259020741638.1360496350523",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "okay, you get {size} puppy"
+                    }
+                ]
+            }
+        ]
+    }
+}
