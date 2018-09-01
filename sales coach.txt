@@ -1,0 +1,156 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "sales coach",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "CoachIntent",
+                    "slots": [
+                        {
+                            "name": "salesGoal",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{salesGoal} dollars"
+                            ]
+                        },
+                        {
+                            "name": "averageIncome",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{averageIncome} dollars"
+                            ]
+                        },
+                        {
+                            "name": "totalProspects",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "set my goals"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "CoachIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.178726684724"
+                    },
+                    "slots": [
+                        {
+                            "name": "salesGoal",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.178726684724.1510032523602",
+                                "elicitation": "Elicit.Slot.178726684724.1510032523602"
+                            }
+                        },
+                        {
+                            "name": "averageIncome",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.178726684724.26946766199",
+                                "elicitation": "Elicit.Slot.178726684724.26946766199"
+                            }
+                        },
+                        {
+                            "name": "totalProspects",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.178726684724.61445691894",
+                                "elicitation": "Elicit.Slot.178726684724.61445691894"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.178726684724.1510032523602",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How much do you want to make in the next year?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.178726684724.1510032523602",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "so you want to make {salesGoal} dollars, right?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.178726684724.26946766199",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "on an average, how much do you make from a single sale?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.178726684724.26946766199",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "from one sale you make {averageIncome} dollars on average, correct?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.178726684724.61445691894",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "how many total prospects do you need to contact to make a single sale?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.178726684724.61445691894",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "you need to contact {totalProspects} prospects to make a sale. Did i hear that right?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.178726684724",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "so you want to make {salesGoal} this year, you make {averageIncome} dollars per sale, and you need to contact {totalProspects} prospects to make a sale. Is that right?"
+                    }
+                ]
+            }
+        ]
+    }
+}
