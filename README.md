@@ -1,5 +1,7 @@
 # test_alx_cmd
 http://whatdidilearn.info/2018/07/08/implementing-hello-world-alexa-skill.html
+https://developer.amazon.com/blogs/alexa/post/d8579cd6-9109-42b2-ada6-df017fc1dee5/how-to-handle-different-intent-requests-with-dialog-management
+https://developer.amazon.com/blogs/alexa/post/5b0efd02-0ed0-42d5-b922-5ee594d30a38/new-alexa-skills-kit-template-build-an-alexa-decision-tree-skill
 
 ``` javascript
 ask simulate -t "Alexa open hello world" -l en-US -s "amzn1.ask.skill.9bfdbdfb-406b-40a1-94" --profile default
